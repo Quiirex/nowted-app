@@ -10,7 +10,7 @@
     "db-server": "json-server ./src/data/db.json",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --e2e",
-    "test": "next build && next start & wait-on http://localhost:3000 && cypress run --e2e --reporter mochawesome"
+    "test": "next build && next start & wait-on http://localhost:3000 && cypress run --reporter mochawesome"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.15",
