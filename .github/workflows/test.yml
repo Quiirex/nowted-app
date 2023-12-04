@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -40,7 +40,7 @@ jobs:
         run: npx mochawesome-merge "cypress/reports/*.json" > report.json && npx marge report.json --reportFilename "testing_report" --reportTitle "Cypress Report" --reportPageTitle "Cypress Report"
 
       - name: Upload testing report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: testing_report
           path: mochawesome-report
