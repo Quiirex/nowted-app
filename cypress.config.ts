@@ -8,7 +8,7 @@ export default defineConfig({
   },
   reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: 'cypress/reports',
+    mochaFile: 'cypress/reports/mocha-report-[hash].json',
     overwrite: false,
     html: true,
     json: true,
