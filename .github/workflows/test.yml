@@ -28,4 +28,4 @@ jobs:
         run: npm run build
 
       - name: Start server and run tests
-        run: npm run start & npx wait-on http://localhost:3000 && npx cypress run --e2e --reporter mochawesome --reporter-options "reportDir=reports/e2e,overwrite=false,html=true,json=true"
+        run: npm run start & npx wait-on http://localhost:3000 && npx cypress run --e2e
