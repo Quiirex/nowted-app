@@ -1,5 +1,5 @@
 describe('Creating a new note', () => {
-  it('should create a new note', () => {
+  before(() => {
     cy.viewport(1920, 1080);
     cy.visit('http://localhost:3000');
     cy.wait(1000);
@@ -11,8 +11,10 @@ describe('Creating a new note', () => {
     cy.get('input.bg-transparent').clear();
     cy.get('input.bg-transparent').type('test');
     cy.get('button.px-2:nth-child(1)').click();
-    cy.wait(2000);
-    cy.get('inactive-text hover:text-white').click();
+    cy.wait(3000);
+  });
+  it('should create a new note', () => {
+    cy.get('div.flex:nth-child(4) > div:nth-child(2) a > button').click();
     cy.get('button.inline-flex:nth-child(1)').click();
     cy.get(
       'div.border:nth-child(2) > div:nth-child(1) > h2:nth-child(1)',
