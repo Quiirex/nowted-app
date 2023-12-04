@@ -29,3 +29,9 @@ jobs:
 
       - name: Start server and run tests
         run: npm run start & npx wait-on http://localhost:3000 && npx cypress run --e2e
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-report
+          path: cypress/reports
