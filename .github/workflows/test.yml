@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Start server and run tests
-        run: npm run start & npx wait-on http://localhost:3000 && npx cypress run --e2e
+        run: npm run start & npx wait-on http://localhost:3000 && npx cypress run --e2e && npx mochawesome-merge "cypress/results/*.json" > mochawesome.json && npx marge mochawesome.json
 
       - name: Upload test report
         uses: actions/upload-artifact@v2
